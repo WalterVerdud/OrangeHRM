@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <parameter name="URL" value="https://opensource-demo.orangehrmlive.com/" />
+
+    <test name="Test on Chrome">
+        <parameter name="BrowserType" value="Chrome"/>
+        <classes>
+            <class name="Tests.Login">
+            </class>
+        </classes>
+    </test>
+
+    <test name="Test on Firefox">
+        <parameter name="BrowserType" value="Firefox"/>
+        <classes>
+            <class name="Tests.Login">
+            </class>
+        </classes>
+    </test>
+
+</suite>
