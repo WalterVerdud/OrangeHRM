@@ -22,7 +22,7 @@ public class AdminTest extends BasePage {
         }
         System.out.println("Opening: Navegador " + browserType);
     }
-    @Test
+    @Test(priority = 1)
     public void adminTest(){
         Login login = new Login();
         PageLogin pageLogin = new PageLogin(driver);
@@ -53,11 +53,11 @@ public class AdminTest extends BasePage {
         helpers.sleepSeconds(3);
         adminPage.setSave();
         helpers.sleepSeconds(5);
-        driver.navigate().back();
-        helpers.sleepSeconds(5);
+        //driver.navigate().back();
+        //helpers.sleepSeconds(5);
 
     }
-    @Test
+    @Test (priority = 2)
     public void deleteUser(){
         helpers helpers = new helpers();
         AdminPage adminPage = new AdminPage(driver);
@@ -73,9 +73,6 @@ public class AdminTest extends BasePage {
         helpers.sleepSeconds(3);
         adminPage.setBtnOk();
         helpers.sleepSeconds(5);
-
-
-
 
 
 
