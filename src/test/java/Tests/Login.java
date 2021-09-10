@@ -33,10 +33,10 @@ public class Login extends BasePage {
         pageLogin.setPass();
         pageLogin.setLogin();
         helpers.sleepSeconds(5);
-        pageLogin.setPerfil();
-        helpers.sleepSeconds(3);
-        pageLogin.setLogout();
-        helpers.sleepSeconds(5);
+        //pageLogin.setPerfil();
+        //helpers.sleepSeconds(3);
+        //pageLogin.setLogout();
+        //helpers.sleepSeconds(5);
 
     }
 
