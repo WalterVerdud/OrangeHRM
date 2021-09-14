@@ -22,7 +22,7 @@ public class AdminTest extends BasePage {
         }
         System.out.println("Opening: Navegador " + browserType);
     }
-    @Test(priority = 1)
+    @Test(priority = 0)
     public void adminTest(){
         Login login = new Login();
         PageLogin pageLogin = new PageLogin(driver);
@@ -33,36 +33,37 @@ public class AdminTest extends BasePage {
         pageLogin.setPass();
         pageLogin.setLogin();
         helpers.sleepSeconds(3);
-        //pageLogin.setPerfil();
         helpers.sleepSeconds(3);
         adminPage.setAdmin();
-        helpers.sleepSeconds(5);
-        adminPage.setAddUser();
         helpers.sleepSeconds(3);
+        adminPage.setAddUser();
+        helpers.sleepSeconds(2);
         adminPage.setRolUser();
         adminPage.setNameEmploy();
-        helpers.sleepSeconds(3);
+        helpers.sleepSeconds(2);
         adminPage.setUserName();
-        helpers.sleepSeconds(3);
+        helpers.sleepSeconds(2);
         adminPage.setStatus();
-        helpers.sleepSeconds(3);
+        helpers.sleepSeconds(2);
         adminPage.setTipoStatus();
         adminPage.setPass();
-        helpers.sleepSeconds(3);
+        helpers.sleepSeconds(2);
         adminPage.setConfPass();
-        helpers.sleepSeconds(3);
+        helpers.sleepSeconds(2);
         adminPage.setSave();
-        helpers.sleepSeconds(5);
-        //driver.navigate().back();
-        //helpers.sleepSeconds(5);
+        helpers.sleepSeconds(8);
+        adminPage.setUserToDelete();
+        helpers.sleepSeconds(2);
 
     }
-    @Test (priority = 2)
+
+    @Test (priority = 1)
     public void deleteUser(){
         helpers helpers = new helpers();
+        PageLogin pageLogin = new PageLogin(driver);
         AdminPage adminPage = new AdminPage(driver);
 
-        adminPage.setAdmin();
+        helpers.sleepSeconds(4);
         adminPage.setDelUserName();
         helpers.sleepSeconds(3);
         adminPage.setSearchUser();
@@ -73,14 +74,18 @@ public class AdminTest extends BasePage {
         helpers.sleepSeconds(3);
         adminPage.setBtnOk();
         helpers.sleepSeconds(5);
-
-
-
-
     }
 
     @AfterTest
     public void cerrar(){
+        PageLogin pageLogin = new PageLogin(driver);
+        helpers helpers = new helpers();
+
+        helpers.sleepSeconds(6);
+        pageLogin.setPerfil();
+        helpers.sleepSeconds(4);
+        pageLogin.setLogout();
+        helpers.sleepSeconds(4);
         closeBrowser();
     }
 

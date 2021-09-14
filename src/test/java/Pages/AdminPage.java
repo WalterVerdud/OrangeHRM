@@ -25,9 +25,10 @@ public class AdminPage {
 
     // Locator Delete User
 
+    By userToDelete = By.id("searchSystemUser_userName");
     By delUserName = By.id("searchSystemUser_userName");
     By searchUser = By.id("searchBtn");
-    By selectUser = By.id("ohrmList_chkSelectRecord_48");
+    By selectUser = By.id("ohrmList_chkSelectAll");
     By btnDelete = By.id("btnDelete");
 
 
@@ -47,10 +48,10 @@ public class AdminPage {
         driver.findElement(rolUser).click();
     }
     public void setNameEmploy(){
-        driver.findElement(nameEmploy).sendKeys("David Morris");
+        driver.findElement(nameEmploy).sendKeys("Fiona Grace");
     }
     public void setUserName(){
-        driver.findElement(userName).sendKeys("DMorris");
+        driver.findElement(userName).sendKeys("FioGrace");
     }
     public void setStatus(){
         driver.findElement(status).click();
@@ -70,11 +71,14 @@ public class AdminPage {
 
     // Constructores Delete User
 
+    public void setUserToDelete(){
+        driver.findElement(userToDelete).click();
+    }
     public void setDelUserName(){
-        driver.findElement(delUserName).click();
+        driver.findElement(delUserName).sendKeys("FioGrace");
     }
     public void setSearchUser(){
-        driver.findElement(searchUser).sendKeys("DMorris");
+        driver.findElement(searchUser).click();
     }
     public void setSelectUser(){
         driver.findElement(selectUser).click();

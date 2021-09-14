@@ -25,6 +25,7 @@ public class BasePage {
     }
 
     public void closeBrowser() {
+        driver.close();
         driver.quit();
 
     }
